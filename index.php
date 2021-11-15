@@ -70,15 +70,13 @@
                     
                     foreach($arr as $key =>$country){
                         if($arr[$key]["p_id"] == 0){
-                            echo("<ul>".$arr[$key]['title']."</ul>");
-                            $temp = $arr[$key]['id'];
+                            echo("<ul>".$country['title']."</ul>");
                             foreach($arr as $key2 =>$city){
-                                if($arr[$key2]["p_id"] == $temp){
-                                echo('<li style="margin-left:60px;">'.$arr[$key2]['title']."</li>");
-                                $temp2 = $arr[$key2]['id'];
+                                if($arr[$key2]["p_id"] == $arr[$key]['id']){
+                                echo('<li style="margin-left:60px;">'.$city['title']."</li>");
                                 foreach($arr as $key3 =>$sub_city){
-                                    if($arr[$key3]["p_id"] == $temp2){
-                                    echo('<li style="margin-left:90px;">'.$arr[$key3]['title']."</li>");
+                                    if($arr[$key3]["p_id"] == $arr[$key2]['id']){
+                                    echo('<li style="margin-left:90px;">'.$sub_city['title']."</li>");
                                     }
                                 }
                                 }
